@@ -1,25 +1,35 @@
-        
-#실습. 로또 번호 뽑기
-#조건1 1~45까지의 수 중에서 랜덤으로 6개의 숫자를 뽑는다.
-#조건2 6개의 숫자 중 중복되는 숫자가 없도록 한다.
-#조건3 오름차순 정렬
+#datetime 모듈 시간
+import datetime
 
-import random
+now = datetime.datetime.today()
+print(now)
+print(now.year)
+print(now.month)
+print(now.day)
 
-num = random.randint(1,45)
-lotto = []
+print(f"{now.hour}시 {now.minute}분 {now.second}초")
+  
+#datetime 나이가 100세 되는 해의 연도 계산하기 프로그램  
+import datetime
+today  = datetime.datetime.today()
+print(today.year)
 
-for i in range(6):
-    while num in lotto:
-        num = random.randint(1,45)
-    lotto.append(num)
-lotto.sort()
-print(f"로또 {lotto}")
-    
+age = int(input("나이 입력: "))
 
+result = today.year + (100 -age)
+print("100세 되는 해는 " + str(result)+ "년 입니다.")
 
-        
+#datetime 지난 날짜 
+print("지금까지 몇 일?")
+first_day = datetime.date.today(2024, 11, 25)
+print(first_day)
 
+today = datetime.date.today()
+print(today)
+
+passed_time = today - first_day
+print(passed_time)
+print(f"개강 이후 {passed_time.days}일 지났습니다.")
 
 
 
